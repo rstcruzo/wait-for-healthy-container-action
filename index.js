@@ -16,7 +16,10 @@ try {
 
   const t0 = performance.now();
 
-  console.log(`Waiting for ${container}...`);
+  core.info(`Waiting for ${container}...`);
+  console.log(typeof(container));
+  console.log(typeof(maxRetries));
+  console.log(typeof(interval));
 
   let i = 0;
   for (; i < maxRetries; i++) {
@@ -31,7 +34,7 @@ try {
   if (i < maxRetries) {
     core.setFailed('Max retries were excceeded. Container still not healthy!');
   } else {
-    console.log(`${container} is healthy!`);
+    core.info(`${container} is healthy!`);
   }
 
   const t1 = performance.now();

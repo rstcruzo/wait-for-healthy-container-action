@@ -25,7 +25,7 @@ try {
       break;
     }
 
-    sleep(interval);
+    sleep(interval * 1000);  // to milliseconds
   }
 
   if (i >= maxRetries) {

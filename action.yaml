@@ -9,7 +9,7 @@ inputs:
     required: false
     default: "60"
   interval:
-    description: 'How much to wait for next retry.'
+    description: 'How many seconds to wait for next retry.'
     required: false
     default: "10"
 outputs:

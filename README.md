@@ -20,6 +20,8 @@ It uses docker-compose to find the container id, so you need to send the compose
 
 ## Example usage
 
+```
 uses: rstcruzo/wait-for-healthy-container-action@master
 with:
   container: service-name
+```

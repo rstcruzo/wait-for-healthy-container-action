@@ -20,14 +20,12 @@ try {
     if (output === 'healthy') {
       break;
     }
-    console.log(output);
 
     sleep(interval * 1000);  // to milliseconds
   }
 
-  console.log(i, maxRetries);
   if (i < maxRetries) {
-    core.info(`${container} is healthy!`);
+    core.info(`${container} is healthy after ${i}/${maxRetries} retries.`);
   } else {
     core.setFailed('Max retries were excceeded. Container still not healthy!');
   }

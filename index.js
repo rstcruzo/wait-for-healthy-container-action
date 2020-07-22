@@ -16,13 +16,20 @@ try {
 
   const t0 = performance.now();
 
-  for (let i = 0; i < maxRetries; i++) {
+  let i = 0;
+
+  for (; i < maxRetries; i++) {
     const output = exec(getHealthStatusCmd, { encoding: 'utf-8' });
+    console.log(output);
     if (output === 'healthy') {
       break;
     }
 
     sleep(interval);
+  }
+
+  if (i >= maxRetries) {
+    core.setFailed('Max retries were excceeded. Container still not healthy!');
   }
 
   const t1 = performance.now();

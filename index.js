@@ -8,8 +8,8 @@ const performance = require('perf_hooks').performance;
 
 try {
   const container = core.getInput('container');
-  const maxRetries = core.getInput('max-retries');
-  const interval = core.getInput('interval');
+  const maxRetries = parseInt(core.getInput('max-retries'));
+  const interval = parseInt(core.getInput('interval'));
 
   const getHealthStatusCmd =
     `docker inspect --format '{{ .State.Health.Status }}' $(docker-compose ps -q ${container})`;
@@ -17,9 +17,6 @@ try {
   const t0 = performance.now();
 
   core.info(`Waiting for ${container}...`);
-  console.log(typeof(container));
-  console.log(typeof(maxRetries));
-  console.log(typeof(interval));
 
   let i = 0;
   for (; i < maxRetries; i++) {

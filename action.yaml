@@ -1,0 +1,20 @@
+name: 'Wait for healthy container'
+description: 'This actions waits for a container to be healthy.'
+inputs:
+  container:
+    description: 'Which to container to wait for.'
+    required: true
+  max-retries:
+    description: 'How many times to check for health status.'
+    required: false
+    default: "60"
+  interval:
+    description: 'How much to wait for next retry.'
+    required: false
+    default: "10"
+outputs:
+  time-spent:
+    description: 'The time we waited for the container'
+runs:
+  using: 'node12'
+  main: 'index.js'

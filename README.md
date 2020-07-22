@@ -12,11 +12,11 @@ It uses docker-compose to find the container id, so you need to send the compose
 
 ### `max-retries`
 
-**Optional** The maximum number of retries.
+**Optional** The maximum number of retries. Default `60` retries.
 
 ### `interval`
 
-**Optional** How many seconds to wait to try again.
+**Optional** How many seconds to wait to try again. Default `10` seconds.
 
 ## Example usage
 

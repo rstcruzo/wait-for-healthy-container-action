@@ -21,7 +21,7 @@ It uses docker-compose to find the container id, so you need to send the compose
 ## Example usage
 
 ```
-uses: rstcruzo/wait-for-healthy-container-action@master
+uses: rstcruzo/wait-for-healthy-container-action@v0.1.0
 with:
   container: service-name
 ```

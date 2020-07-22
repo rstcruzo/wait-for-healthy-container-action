@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 
-const exec = require('child_process').exec;
+const exec = require('child_process').execSync;
 var sleep = require('system-sleep');
 
 const performance = require('perf_hooks').performance;
@@ -17,11 +17,11 @@ try {
   const t0 = performance.now();
 
   for (let i = 0; i < maxRetries; i++) {
-    exec(getHealthStatusCmd, function (error, stdOut, stdErr) {
-      if (stdOut == 'healthy') {
-        break;
-      }
-    });
+    const output = exec(getHealthStatusCmd, { encoding: 'utf-8' });
+    if (output === 'healthy') {
+      break;
+    }
+
     sleep(interval);
   }
 

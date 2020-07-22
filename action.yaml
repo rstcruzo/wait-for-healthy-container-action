@@ -12,9 +12,6 @@ inputs:
     description: 'How many seconds to wait for next retry.'
     required: false
     default: "10"
-outputs:
-  time-spent:
-    description: 'The time we waited for the container'
 runs:
   using: 'node12'
   main: 'index.js'

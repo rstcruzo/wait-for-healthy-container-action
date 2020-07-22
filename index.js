@@ -25,10 +25,11 @@ try {
   }
 
   if (i < maxRetries) {
-    core.setFailed('Max retries were excceeded. Container still not healthy!');
-  } else {
     core.info(`${container} is healthy!`);
+  } else {
+    core.setFailed('Max retries were excceeded. Container still not healthy!');
   }
+
 } catch (error) {
   core.setFailed(error.message);
 }

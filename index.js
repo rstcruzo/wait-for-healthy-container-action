@@ -1,7 +1,8 @@
 const core = require('@actions/core');
 
 const exec = require('child_process').exec;
-const sleep = require('sleep');
+var sleep = require('system-sleep');
+
 const performance = require('perf_hooks').performance;
 
 
@@ -21,7 +22,7 @@ try {
         break;
       }
     });
-    sleep.sleep(interval);
+    sleep(interval);
   }
 
   const t1 = performance.now();

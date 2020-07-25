@@ -1,4 +1,4 @@
-# Wait for container to be healthy
+# Wait until healthy action
 
 This action waits for a container status to be `healthy`.
 
